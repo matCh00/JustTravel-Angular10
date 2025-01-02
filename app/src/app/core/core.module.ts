@@ -3,12 +3,25 @@ import {CommonModule} from '@angular/common';
 import {HeaderComponent} from './header/header.component';
 import {SidebarComponent} from './sidebar/sidebar.component';
 import {FooterComponent} from './footer/footer.component';
+import {RouterModule} from "@angular/router";
+import {ButtonModule} from "primeng/button";
 
 
 @NgModule({
-  declarations: [HeaderComponent, SidebarComponent, FooterComponent],
+  declarations: [
+    HeaderComponent,
+    SidebarComponent,
+    FooterComponent
+  ],
+  exports: [
+    HeaderComponent,
+    SidebarComponent,
+    FooterComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    ButtonModule
   ]
 })
 export class CoreModule {
