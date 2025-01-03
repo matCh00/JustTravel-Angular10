@@ -23,14 +23,23 @@ g { color: gold }
 * **[feature](app/src/app/feature)** - _folder with feature modules_
   * [admin-panel](app/src/app/feature/admin-panel)
     * dashboard
+    * users-list
+    * _component, module, routing module_
+      * <x>not lazy</x>
   * [map](app/src/app/feature/map)
-    * map
+    * _component, module, routing module_
+      * <x>not lazy</x>
   * [review](app/src/app/feature/review)
     * review-form
     * review-list
+    * _component, module, routing module_
+      * <x>not lazy</x>
   * [travel](app/src/app/feature/travel)
+    * travel-carousel
     * travel-details
     * travel-list
+    * _component, module, routing module_
+      * <x>not lazy</x>
 
 <br>
 
@@ -40,4 +49,5 @@ g { color: gold }
 
 * other features:
   * <x>dynamic scss variables</x> - _app.component.ts_
-  * <x>theme</x> - _styles.scss_
+  * <x>theme</x> - _styles.scss_   
+  * <x>lazy loading</x> - _app-routing.module.ts_   
