@@ -4,6 +4,10 @@
   </div>
 
   <div class="p-justify-center">
+    <div class="logo-container" (click)="triggerPlaneAnimation()">
+      <img src="assets/logo.png" alt="" class="globe">
+      <img src="assets/plane.png" alt="" class="plane" [class.animate]="isAnimating">
+    </div>
   </div>
 
   <div class="p-toolbar-group-right">

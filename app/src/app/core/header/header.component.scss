@@ -1,0 +1,57 @@
+.logo-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+
+  .globe {
+    width: 80px;
+    height: 80px;
+  }
+
+  .plane {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 30px;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.1);
+  }
+
+  .plane.animate {
+    animation: fly 6s linear forwards;
+  }
+}
+
+@keyframes fly {
+  0% {
+    transform: translate(-50%, -50%) translateX(-30px) translateY(-10px) scale(0.1) rotateY(0);
+    opacity: 0;
+  }
+  20% {
+    transform: translate(-50%, -50%) translateX(40px) translateY(-6px) scale(0.2) rotateY(0);
+    opacity: 1;
+  }
+  40% {
+    transform: translate(-50%, -50%) translateX(80px) translateY(-2px) scale(0.3) rotateY(0);
+    opacity: 1;
+  }
+  55% {
+    transform: translate(-50%, -50%) translateX(110px) translateY(2px) scale(0.4) rotateY(0);
+    opacity: 1;
+  }
+  60% {
+    transform: translate(-50%, -50%) translateX(120px) translateY(10px) scale(0.5) rotateY(3.142rad);
+    opacity: 1;
+  }
+  95% {
+    transform: translate(-50%, -50%) translateX(-130px) translateY(10px) scale(1) rotateY(3.142rad);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translateX(-160px) translateY(10px) scale(1) rotateY(3.142rad);
+    opacity: 0;
+  }
+}

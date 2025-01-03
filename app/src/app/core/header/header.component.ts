@@ -9,4 +9,16 @@ export class HeaderComponent {
 
   @Output() toggleSidebar = new EventEmitter<boolean>();
 
+
+  isAnimating = false;
+
+  triggerPlaneAnimation() {
+    if (this.isAnimating)
+      return;
+    this.isAnimating = true;
+    setTimeout(() => {
+      this.isAnimating = false;
+    }, 6000);
+  }
+
 }
