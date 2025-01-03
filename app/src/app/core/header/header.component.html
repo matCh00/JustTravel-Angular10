@@ -1,15 +1,23 @@
 <p-toolbar id="header">
   <div class="p-toolbar-group-left">
-    <p-button type="button" icon="pi pi-bars" (click)="toggleSidebar.emit(true)"></p-button>
+    <button
+      pButton type="button" icon="pi pi-bars" class="p-button-outlined"
+      (click)="toggleSidebar.emit(true)"
+    ></button>
   </div>
 
-  <div class="p-justify-center">
-    <div class="logo-container" (click)="triggerPlaneAnimation()">
+  <div class="p-d-flex p-justify-center p-align-center">
+    <span class="special-font">Just</span>
+    <div class="logo-container p-mx-5" (click)="triggerPlaneAnimation()">
       <img src="assets/logo.png" alt="" class="globe">
       <img src="assets/plane.png" alt="" class="plane" [class.animate]="isAnimating">
     </div>
+    <span class="special-font">Travel</span>
   </div>
 
   <div class="p-toolbar-group-right">
+    <button
+      pButton type="button" icon="pi pi-user" class="p-button-outlined" label="Log in"
+    ></button>
   </div>
 </p-toolbar>
