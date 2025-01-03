@@ -1,5 +1,11 @@
-<header>
-  <div>
-    <button type="button" pButton icon="pi pi-bars" (click)="toggleSidebar.emit()"></button>
+<p-toolbar id="header">
+  <div class="p-toolbar-group-left">
+    <p-button type="button" icon="pi pi-bars" (click)="toggleSidebar.emit(true)"></p-button>
   </div>
-</header>
+
+  <div class="p-justify-center">
+  </div>
+
+  <div class="p-toolbar-group-right">
+  </div>
+</p-toolbar>

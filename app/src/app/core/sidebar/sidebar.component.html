@@ -1,7 +1,13 @@
-<aside *ngIf="sidebarVisible">
+<p-sidebar
+  [(visible)]="sidebarVisible"
+  (visibleChange)="sidebarVisibleChange.emit($event)"
+  position="left"
+  [style]="{width:'15em'}"
+>
+  <h2>Contents</h2>
   <ul>
     <li><a routerLink="/">Home</a></li>
     <li><a routerLink="/travel">Travel</a></li>
     <li><a routerLink="/review">Review</a></li>
   </ul>
-</aside>
+</p-sidebar>
