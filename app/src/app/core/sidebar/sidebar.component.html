@@ -5,9 +5,10 @@
   [style]="{width:'15em'}"
 >
   <h2>Contents</h2>
-  <ul>
-    <li><a routerLink="/">Home</a></li>
-    <li><a routerLink="/travel">Travel</a></li>
-    <li><a routerLink="/review">Review</a></li>
-  </ul>
+  <div class="p-d-flex p-flex-column">
+    <a routerLink="/travel" class="p-button p-mb-3" (click)="sidebarVisibleChange.emit(false)">Travel</a>
+    <a routerLink="/review" class="p-button p-mb-3" (click)="sidebarVisibleChange.emit(false)">Review</a>
+    <a routerLink="/map" class="p-button p-mb-3" (click)="sidebarVisibleChange.emit(false)">Map</a>
+    <a routerLink="/admin-panel" class="p-button" (click)="sidebarVisibleChange.emit(false)">Admin</a>
+  </div>
 </p-sidebar>
