@@ -14,7 +14,7 @@ g { color: gold }
   * footer
   * header
     * <x>@Output()</x>
-    * <x>animation: class binding + scss @keyframes</x>
+    * <x>animation: class binding + @keyframes</x>
   * sidebar
     * <x>two-way: @Input() + @Output()</x>
 
