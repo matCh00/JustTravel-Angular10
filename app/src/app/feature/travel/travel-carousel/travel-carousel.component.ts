@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Place} from "../../../shared/models/place.model";
-import {FileService} from "../../../shared/services/file.service";
+import {ApiService} from "../../../shared/services/api.service";
 import {Subscription} from "rxjs";
 
 @Component({
@@ -15,7 +15,7 @@ export class TravelCarouselComponent implements OnInit, OnDestroy {
   error: boolean = false;
 
   constructor(
-    private fileService: FileService,
+    private apiService: ApiService,
   ) {}
 
   private sub: Subscription;
@@ -24,7 +24,7 @@ export class TravelCarouselComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.loading = true;
 
-    this.sub = this.fileService.getPlaces().subscribe({
+    this.sub = this.apiService.getPlaces().subscribe({
       next: places => {
         this.places = places;
         this.loading = false;

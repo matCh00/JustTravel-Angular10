@@ -7,7 +7,7 @@ import {map} from "rxjs/operators";
 @Injectable({
   providedIn: 'root'
 })
-export class FileService {
+export class ApiService {
 
   constructor(
     private httpClient: HttpClient,
