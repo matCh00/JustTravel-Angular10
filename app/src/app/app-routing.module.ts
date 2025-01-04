@@ -4,19 +4,19 @@ import {Routes, RouterModule} from '@angular/router';
 const routes: Routes = [
   {
     path: "",
-    loadChildren: () => import("./feature/travel/travel-routing.module").then(m => m.TravelRoutingModule),
+    loadChildren: () => import("./feature/travel/travel.module").then(m => m.TravelModule),
   },
   {
     path: "review",
-    loadChildren: () => import("./feature/review/review-routing.module").then(m => m.ReviewRoutingModule),
+    loadChildren: () => import("./feature/review/review.module").then(m => m.ReviewModule),
   },
   {
     path: "map",
-    loadChildren: () => import("./feature/map/map-routing.module").then(m => m.MapRoutingModule),
+    loadChildren: () => import("./feature/map/map.module").then(m => m.MapModule),
   },
   {
     path: "admin-panel",
-    loadChildren: () => import("./feature/admin-panel/admin-panel-routing.module").then(r => r.AdminPanelRoutingModule),
+    loadChildren: () => import("./feature/admin-panel/admin-panel.module").then(r => r.AdminPanelModule),
   },
   {
     path: "**",
