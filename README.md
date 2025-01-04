@@ -37,6 +37,10 @@ g { color: gold }
       * <x>not lazy</x>
   * [travel](app/src/app/feature/travel)
     * travel-carousel
+      * <x>basic variables</x>
+      * <x>OnDestroy</x>
+      * <x>constructor()</x>
+      * <x>ng-container + *ngIf</x>
     * travel-details
     * travel-list
     * _component, module, routing module_
@@ -45,7 +49,11 @@ g { color: gold }
 
 <br>
 
-* **[shared](app/src/app/shared)** - _module with shared components_
+* **[shared](app/src/app/shared)** - _module with shared elements_
+  * models
+  * services
+    * file.service
+      * <x>constructor()</x>
 
 <br>
 

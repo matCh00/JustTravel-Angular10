@@ -6,15 +6,19 @@ import {TravelComponent} from './travel.component';
 import {TravelCarouselComponent} from './travel-carousel/travel-carousel.component';
 import {TravelRoutingModule} from "./travel-routing.module";
 import {DeferModule} from "primeng/defer";
+import {CarouselModule} from "primeng/carousel";
+import {ProgressSpinnerModule} from "primeng/progressspinner";
 
 
 @NgModule({
   declarations: [TravelListComponent, TravelDetailsComponent, TravelComponent, TravelCarouselComponent],
-  imports: [
-    CommonModule,
-    TravelRoutingModule,
-    DeferModule
-  ]
+    imports: [
+        CommonModule,
+        TravelRoutingModule,
+        DeferModule,
+        CarouselModule,
+        ProgressSpinnerModule
+    ]
 })
 export class TravelModule {
 }
