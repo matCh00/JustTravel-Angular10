@@ -8,56 +8,65 @@ x { color: orange }
 g { color: gold }
 </style>
 
-<br>
+### Angular features
+
+* **project features**:
+    * animations:
+        * <x>class binding + @keyframes</x>
+    * related flow
+        * <x>@Input()</x>
+        * <x>@Output()</x>
+        * two-way: <x>@Input() + @Output()</x>
+    * component flow:
+        * <x>basic variables</x>
+        * async: <x>Observable + async Pipe</x>
+        * destroy: <x>OnDestroy</x>
+    * injectable:
+        * <x>constructor()</x>
+    * html flow:
+        * <x>ng-container + *ngIf</x>
+        * defer: <x>pDefer</x>
+
+
+* **other features**:
+    * <x>dynamic scss variables</x> - _app.component.ts_
+    * <x>theme</x> - _styles.scss_
+    * <x>lazy loading</x> - _app-routing.module.ts_
+
+------------------
+
+### Structure
 
 * **[core](app/src/app/core)** - _module with layout components_
-  * footer
-  * header
-    * <x>@Output()</x>
-    * <x>animation: class binding + @keyframes</x>
-  * sidebar
-    * <x>two-way: @Input() + @Output()</x>
+    * footer
+    * header
+    * sidebar
 
-<br>
 
 * **[feature](app/src/app/feature)** - _folder with feature modules_
-  * [admin-panel](app/src/app/feature/admin-panel)
-    * dashboard
-    * users-list
-    * _component, module, routing module_
-      * <x>not lazy</x>
-      * <x>defer: pDefer</x>
-  * [map](app/src/app/feature/map)
-    * _component, module, routing module_
-      * <x>not lazy</x>
-  * [review](app/src/app/feature/review)
-    * review-form
-    * review-list
-    * _component, module, routing module_
-      * <x>not lazy</x>
-  * [travel](app/src/app/feature/travel)
-    * travel-carousel
-      * <x>basic variables</x>
-      * <x>OnDestroy</x>
-      * <x>constructor()</x>
-      * <x>ng-container + *ngIf</x>
-    * travel-details
-    * travel-list
-    * _component, module, routing module_
-      * <x>not lazy</x>  
-      * <x>defer: pDefer</x>
+    * [explore](app/src/app/feature/explore)
+        * map
+        * places-carousel
+        * _component_
+    * [home](app/src/app/feature/home)
+        * hero
+        * instruction
+        * nav-buttons
+        * _component_
+    * [travel](app/src/app/feature/travel)
+        * map
+        * _component, routes_
+    * [travels](app/src/app/feature/travels)
+        * trip-dialog
+        * trip-list
+        * _component, routes_
 
-<br>
 
 * **[shared](app/src/app/shared)** - _module with shared elements_
-  * models
-  * services
-    * file.service
-      * <x>constructor()</x>
-
-<br>
-
-* other features:
-  * <x>dynamic scss variables</x> - _app.component.ts_
-  * <x>theme</x> - _styles.scss_   
-  * <x>lazy loading</x> - _app-routing.module.ts_   
+    * components
+        * google-map
+    * models
+        * place.model
+        * trip.model
+    * services
+        * api.service

@@ -55,6 +55,11 @@ body {
   margin-inline: -.5rem;
   padding: .5rem;
   z-index: 9999;
+  margin-top: 5rem;
+}
+
+.p-sidebar-left {
+  z-index: 99999 !important;
 }
 
 
@@ -96,7 +101,7 @@ body {
 
 
 section {
-  height: 100vh;
+  min-height: 100vh;
   padding: 1rem;
   position: relative;
 }

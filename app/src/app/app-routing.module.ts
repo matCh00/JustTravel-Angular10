@@ -4,20 +4,22 @@ import {Routes, RouterModule} from '@angular/router';
 const routes: Routes = [
   {
     path: "",
+    loadChildren: () => import("./feature/home/home.module").then(m => m.HomeModule),
+  },
+  {
+    path: "explore",
+    loadChildren: () => import("./feature/explore/explore.module").then(m => m.ExploreModule),
+  },
+
+  {
+    path: "travel",
     loadChildren: () => import("./feature/travel/travel.module").then(m => m.TravelModule),
   },
   {
-    path: "review",
-    loadChildren: () => import("./feature/review/review.module").then(m => m.ReviewModule),
+    path: "travels",
+    loadChildren: () => import("./feature/travels/travels.module").then(r => r.TravelsModule),
   },
-  {
-    path: "map",
-    loadChildren: () => import("./feature/map/map.module").then(m => m.MapModule),
-  },
-  {
-    path: "admin-panel",
-    loadChildren: () => import("./feature/admin-panel/admin-panel.module").then(r => r.AdminPanelModule),
-  },
+
   {
     path: "**",
     redirectTo: '',

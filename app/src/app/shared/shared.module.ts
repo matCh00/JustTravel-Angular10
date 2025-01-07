@@ -1,12 +1,16 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import { GoogleMapsComponent } from './components/google-maps/google-maps.component';
 
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+    declarations: [GoogleMapsComponent],
+    exports: [
+        GoogleMapsComponent
+    ],
+    imports: [
+        CommonModule
+    ]
 })
 export class SharedModule {
 }
