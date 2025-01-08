@@ -8,17 +8,22 @@ import {RouterModule} from "@angular/router";
 import {TooltipModule} from "primeng/tooltip";
 import {ButtonModule} from "primeng/button";
 import {TravelsRoutingModule} from "./travels-routing.module";
+import {MapComponent} from './map/map.component';
+import {SharedModule} from "../../shared/shared.module";
+import {DeferModule} from "primeng/defer";
 
 
 @NgModule({
-  declarations: [TravelsComponent, TripListComponent, TripDialogComponent],
+  declarations: [TravelsComponent, TripListComponent, TripDialogComponent, MapComponent],
   imports: [
     CommonModule,
     TableModule,
     RouterModule,
     TooltipModule,
     ButtonModule,
-    TravelsRoutingModule
+    TravelsRoutingModule,
+    SharedModule,
+    DeferModule
   ]
 })
 export class TravelsModule {

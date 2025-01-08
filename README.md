@@ -18,6 +18,7 @@ g { color: gold }
         * <x>@Output()</x>
         * two-way: <x>@Input() + @Output()</x>
     * component flow:
+        * <x>basic variables</x>
         * <x>@ViewChild()</x>
         * async: <x>Observable + async Pipe</x>
         * destroy: <x>OnDestroy</x>
@@ -65,6 +66,7 @@ g { color: gold }
 
 * **[shared](app/src/app/shared)** - _module with shared elements_
     * components
+      * google-maps
     * models
         * place.model
         * trip.model

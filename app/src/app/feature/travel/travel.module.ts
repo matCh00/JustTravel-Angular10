@@ -3,9 +3,7 @@ import {CommonModule} from '@angular/common';
 import {MapComponent} from './map/map.component';
 import {TravelComponent} from "./travel.component";
 import {TravelRoutingModule} from "./travel-routing.module";
-import {GoogleMapsModule} from "@angular/google-maps";
-import {InputTextModule} from "primeng/inputtext";
-import {ButtonModule} from "primeng/button";
+import {SharedModule} from "../../shared/shared.module";
 
 
 @NgModule({
@@ -13,9 +11,7 @@ import {ButtonModule} from "primeng/button";
   imports: [
     CommonModule,
     TravelRoutingModule,
-    GoogleMapsModule,
-    InputTextModule,
-    ButtonModule,
+    SharedModule,
   ]
 })
 export class TravelModule {
