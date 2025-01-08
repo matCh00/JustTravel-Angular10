@@ -18,13 +18,14 @@ g { color: gold }
         * <x>@Output()</x>
         * two-way: <x>@Input() + @Output()</x>
     * component flow:
-        * <x>basic variables</x>
+        * <x>@ViewChild()</x>
         * async: <x>Observable + async Pipe</x>
         * destroy: <x>OnDestroy</x>
     * injectable:
         * <x>constructor()</x>
     * html flow:
         * <x>ng-container + *ngIf</x>
+        * <x>*ngFor</x>
         * defer: <x>pDefer</x>
 
 
