@@ -5,7 +5,6 @@ import {MapComponent} from './map/map.component';
 import {PlacesCarouselComponent} from './places-carousel/places-carousel.component';
 import {ProgressSpinnerModule} from "primeng/progressspinner";
 import {CarouselModule} from "primeng/carousel";
-import {SharedModule} from "../../shared/shared.module";
 import {DeferModule} from "primeng/defer";
 import {ExploreRoutingModule} from "./explore-routing.module";
 
@@ -19,7 +18,6 @@ import {ExploreRoutingModule} from "./explore-routing.module";
     CommonModule,
     ProgressSpinnerModule,
     CarouselModule,
-    SharedModule,
     DeferModule,
     ExploreRoutingModule
   ]
