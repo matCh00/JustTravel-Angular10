@@ -1,0 +1,39 @@
+<div class="p-grid" style="height: 70vh">
+
+
+  <div class="p-col-10">
+    <ng-container *ngIf="!streetViewVisible">
+      <google-map
+        width="100%"
+        height="100%"
+        [center]="center"
+        [options]="options"
+      ></google-map>
+    </ng-container>
+
+    <div
+      id="street-view"
+      style="width: 100%; height: 100%;"
+      [ngStyle]="{'height': !streetViewVisible ? '0px' : '100%'}"
+    ></div>
+  </div>
+
+
+  <div class="p-col-2 p-d-flex p-flex-column p-align-center">
+    <button pButton label="Randomize place" (click)="randomizePlace()"></button>
+
+    <div *ngIf="showAnswerInput" class="p-d-flex p-flex-column p-align-center">
+      <strong class="p-my-3">Country:</strong>
+      <div class="p-d-flex">
+        <input [(ngModel)]="userAnswer" placeholder="Answer" pInputText style="flex-grow: 1" />
+        <button pButton icon="pi pi-check" (click)="checkAnswer()"></button>
+      </div>
+      <strong *ngIf="correct === false" style="color: red" class="p-my-3">Wrong</strong>
+      <strong *ngIf="correct === true" style="color: green" class="p-my-3">Right!</strong>
+      <strong *ngIf="correct !== undefined" class="p-my-3">Count: {{count}}</strong>
+      <button *ngIf="correct === true" pButton label="OK" (click)="ok()"></button>
+    </div>
+  </div>
+
+
+</div>

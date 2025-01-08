@@ -7,6 +7,10 @@ import {ProgressSpinnerModule} from "primeng/progressspinner";
 import {CarouselModule} from "primeng/carousel";
 import {DeferModule} from "primeng/defer";
 import {ExploreRoutingModule} from "./explore-routing.module";
+import {GoogleMapsModule} from "@angular/google-maps";
+import {ButtonModule} from "primeng/button";
+import {InputTextModule} from "primeng/inputtext";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -19,7 +23,11 @@ import {ExploreRoutingModule} from "./explore-routing.module";
     ProgressSpinnerModule,
     CarouselModule,
     DeferModule,
-    ExploreRoutingModule
+    ExploreRoutingModule,
+    GoogleMapsModule,
+    ButtonModule,
+    InputTextModule,
+    FormsModule
   ]
 })
 export class ExploreModule {
