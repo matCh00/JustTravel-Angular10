@@ -15,7 +15,10 @@
     <span class="logo-font">Just</span>
     <div class="logo-container p-ml-5 p-mr-4" (click)="triggerPlaneAnimation()">
       <img src="assets/logo.png" alt="" class="globe">
-      <img src="assets/plane.png" alt="" class="plane" [class.animate]="isAnimating">
+      <img
+        *ngFor="let plane of planes; let i = index"
+        [src]="plane.src" alt=""
+        class="plane" [class.animate]="isAnimating && selectedPlane === i">
     </div>
     <span class="logo-font">Travel</span>
   </div>
@@ -24,7 +27,7 @@
   <div class="p-toolbar-group-right">
     <div style="width: 10rem" class="p-d-flex p-align-center p-justify-end">
       <button
-        pButton type="button" icon="pi pi-user" class="p-button-outlined" label="Log in"
+        pButton type="button" icon="pi pi-user" class="p-button-outlined" label="matCh00"
       ></button>
     </div>
   </div>
