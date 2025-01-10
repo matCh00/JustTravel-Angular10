@@ -1,5 +1,17 @@
-import {AfterViewInit, Component, ElementRef, Input, NgZone, OnChanges, SimpleChanges, ViewChild} from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef, EventEmitter,
+  Input,
+  NgZone,
+  OnChanges,
+  Output,
+  SimpleChanges,
+  ViewChild
+} from '@angular/core';
 import {GoogleMap} from "@angular/google-maps";
+import {Location} from "../../models/location.model";
+
 
 @Component({
   selector: 'app-google-maps',
@@ -8,7 +20,8 @@ import {GoogleMap} from "@angular/google-maps";
 })
 export class GoogleMapsComponent implements AfterViewInit, OnChanges {
 
-  @Input() locations: { lat: number; lng: number; title?: string }[] = [];
+  @Input() locations: Location[] = [];
+  @Output() locationsChange = new EventEmitter<Location[]>();
 
   @ViewChild('map', {static: false}) map!: GoogleMap;
   @ViewChild('searchBox', {static: false}) searchBox!: ElementRef<HTMLInputElement>;

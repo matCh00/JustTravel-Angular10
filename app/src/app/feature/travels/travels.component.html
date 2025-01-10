@@ -9,9 +9,22 @@
   <ng-template>
 
     <section id="map" class="p-p-6">
-      <p class="h1-font p-text-center">Quick create and use!</p>
-      <app-map-travels></app-map-travels>
+      <p class="h1-font p-text-center">Create new trip!</p>
+      <app-map-travels [(locations)]="locations"></app-map-travels>
+
+      <div class="p-d-flex p-justify-center p-mt-5">
+        <button pButton (click)="createTrip()" label="Create trip" class="p-button-lg"></button>
+      </div>
     </section>
 
   </ng-template>
 </div>
+
+
+
+<p-dialog header="Trip info" style="width: 70%;" [(visible)]="dialogVisible" [modal]="true">
+  <app-trip-dialog-form
+    (submit)="handleSubmit($event)"
+    (cancel)="handleCancel()"
+  ></app-trip-dialog-form>
+</p-dialog>
