@@ -1,0 +1,18 @@
+<div
+  #navContainer
+  class="p-d-flex p-flex-column p-align-end"
+  style="position: sticky; z-index: 999; top: 7rem; right: 1rem;"
+>
+
+  <ng-container *ngFor="let fragment of fragments; let index = index">
+
+    <button
+      pButton type="button" class="p-button-rounded p-button-outlined p-mb-2"
+      [icon]="'pi ' + fragment.icon"
+      (click)="scrollTo(index)"
+      [pTooltip]="fragment.frag" tooltipPosition="left"
+    ></button>
+
+  </ng-container>
+
+</div>

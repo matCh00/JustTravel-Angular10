@@ -7,4 +7,10 @@ import {Component} from '@angular/core';
 })
 export class HomeComponent {
 
+  fragments = [
+    {frag: 'hero', icon: 'pi-hashtag'},
+    {frag: 'explore', icon: 'pi-map-marker'},
+    {frag: 'travel', icon: 'pi-map'},
+  ]
+
 }
