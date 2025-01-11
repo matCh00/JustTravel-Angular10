@@ -57,6 +57,7 @@ export class TravelComponent implements OnInit, AfterViewInit {
 
   onSubmit() {
     this.trip$.pipe(
+      take(1),
       switchMap((t: Trip) => {
         const trip: Trip = {
           ...this.tripDetailsForm.form.getRawValue(),
@@ -70,6 +71,7 @@ export class TravelComponent implements OnInit, AfterViewInit {
 
   handleLocationsChange(locations: Location[]) {
     this.trip$.pipe(
+      take(1),
       map(t => {
         return {
           ...t,
