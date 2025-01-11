@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Location} from "../../../shared/models/location.model";
 
 @Component({
   selector: 'app-map-travel',
@@ -6,5 +7,8 @@ import {Component} from '@angular/core';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent {
+
+  @Input() locations: Location[] = [];
+  @Output() locationsChange = new EventEmitter<Location[]>();
 
 }

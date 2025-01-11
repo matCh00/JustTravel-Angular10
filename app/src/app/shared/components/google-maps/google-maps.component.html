@@ -59,7 +59,7 @@
   </div>
 
   <div class="p-m-2">
-    <button pButton (click)="exportMap()" label="Export to .txt" [disabled]="locations.length < 2"></button>
+    <button pButton (click)="exportMap()" label="Export to .txt" [disabled]="locations?.length < 2"></button>
     <input [ngModel]="shareUrl" pInputText placeholder="Google Maps URL" style="flex-grow: 1; width: 20rem;" class="p-ml-2" readonly/>
     <input
       #urlInput

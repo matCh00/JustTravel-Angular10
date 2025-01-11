@@ -1,10 +1,21 @@
 <section id="map">
   <p class="h1-font p-text-center">Route</p>
-  <app-map-travel></app-map-travel>
+  <app-map-travel [locations]="(trip$ | async)?.waypoints" (locationsChange)="handleLocationsChange($event)"></app-map-travel>
 </section>
 
 
 
 <section id="data">
   <p class="h1-font p-text-center">Trip data</p>
+
+  <form (ngSubmit)="onSubmit()" #f="ngForm">
+    <app-trip-details-form></app-trip-details-form>
+
+    <div class="p-d-flex p-justify-end">
+      <button pButton type="button" label="Cancel" routerLink="/travels" class="p-mr-2 p-button-outlined"></button>
+      <ng-container *ngIf="editMode">
+        <button pButton type="submit" label="Save" [disabled]="f.invalid"></button>
+      </ng-container>
+    </div>
+  </form>
 </section>

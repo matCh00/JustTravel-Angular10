@@ -40,4 +40,8 @@ export class TravelsComponent {
     this.dialogVisible = false;
   }
 
+  handleDelete(id: string) {
+    this.apiService.deleteTrip(id).subscribe()
+  }
+
 }

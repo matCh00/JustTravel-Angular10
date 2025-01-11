@@ -109,29 +109,29 @@ export class GoogleMapsComponent implements AfterViewInit, OnChanges {
 
 
   updateRoute() {
-    if (this.locations.length < 2) {
+    if (this.locations?.length < 2) {
       this.directionsRenderer?.setDirections({geocoded_waypoints: [], routes: []});
       this.directions = null;
       this.updateShareUrl();
       return;
     }
 
-    if (!this.directionsRenderer) {
+    if (!this.directionsRenderer && this.map?.googleMap) {
       this.directionsRenderer = new google.maps.DirectionsRenderer({
         suppressMarkers: true,
         preserveViewport: true,
       });
-      this.directionsRenderer.setMap(this.map.googleMap!);
+      this.directionsRenderer.setMap(this.map.googleMap);
     }
 
-    const waypoints = this.locations.slice(1, -1).map((location) => ({
+    const waypoints = this.locations?.slice(1, -1).map((location) => ({
       location: new google.maps.LatLng(location.lat, location.lng),
       stopover: true,
     }));
 
     const request: google.maps.DirectionsRequest = {
-      origin: this.locations[0],
-      destination: this.locations[this.locations.length - 1],
+      origin: this.locations?.[0] ?? '',
+      destination: this.locations?.[this.locations?.length - 1],
       waypoints,
       travelMode: google.maps.TravelMode.WALKING,
     };
@@ -158,7 +158,7 @@ export class GoogleMapsComponent implements AfterViewInit, OnChanges {
 
 
   exportMap() {
-    if (this.locations.length < 2) {
+    if (this.locations?.length < 2) {
       return;
     }
     this.updateShareUrl();
@@ -225,7 +225,7 @@ export class GoogleMapsComponent implements AfterViewInit, OnChanges {
 
       this.updateRoute();
 
-      if (this.locations.length > 0) {
+      if (this.locations?.length > 0) {
         this.center = {lat: this.locations[0].lat, lng: this.locations[0].lng};
       }
     } catch (error) {

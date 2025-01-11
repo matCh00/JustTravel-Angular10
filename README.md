@@ -53,18 +53,20 @@ g { color: gold }
     * [explore](app/src/app/feature/explore)
         * map
         * places-carousel
-        * _component_
+        * _component, routing_
     * [home](app/src/app/feature/home)
         * hero
         * instruction
-        * _component_
+        * _component, routing_
     * [travel](app/src/app/feature/travel)
         * map
-        * _component, routes, resolver_
+        * trip-details-form
+        * _component, routing, resolver_
     * [travels](app/src/app/feature/travels)
-        * trip-dialog
+        * map
+        * trip-dialog-form
         * trip-list
-        * _component, routes_
+        * _component, routing_
 
 
 * **[shared](app/src/app/shared)** - _module with shared elements_
