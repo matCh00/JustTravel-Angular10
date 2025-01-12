@@ -1,6 +1,6 @@
 <section id="trip-list">
   <p class="h1-font p-text-center">Your trips</p>
-  <app-trip-list (delete)="handleDelete($event)"></app-trip-list>
+  <app-trip-list></app-trip-list>
 </section>
 
 
@@ -10,10 +10,10 @@
 
     <section id="map" class="p-p-6">
       <p class="h1-font p-text-center">Create new trip!</p>
-      <app-map-travels [(locations)]="locations"></app-map-travels>
+      <app-google-maps [(locations)]="locations"></app-google-maps>
 
       <div class="p-d-flex p-justify-center p-mt-5">
-        <button pButton (click)="createTrip()" label="Create trip" class="p-button-lg"></button>
+        <button pButton (click)="openDialog()" label="Create trip" class="p-button-lg"></button>
       </div>
     </section>
 
@@ -25,6 +25,6 @@
 <p-dialog header="Trip info" style="width: 70%;" [(visible)]="dialogVisible" [modal]="true">
   <app-trip-dialog-form
     (submit)="handleSubmit($event)"
-    (cancel)="handleCancel()"
+    (cancel)="closeDialog()"
   ></app-trip-dialog-form>
 </p-dialog>

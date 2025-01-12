@@ -8,7 +8,6 @@ import {RouterModule} from "@angular/router";
 import {TooltipModule} from "primeng/tooltip";
 import {ButtonModule} from "primeng/button";
 import {TravelsRoutingModule} from "./travels-routing.module";
-import {MapComponent} from './map/map.component';
 import {SharedModule} from "../../shared/shared.module";
 import {DeferModule} from "primeng/defer";
 import {FormsModule} from "@angular/forms";
@@ -18,7 +17,7 @@ import {DialogModule} from "primeng/dialog";
 
 
 @NgModule({
-  declarations: [TravelsComponent, TripListComponent, TripDialogFormComponent, MapComponent],
+  declarations: [TravelsComponent, TripListComponent, TripDialogFormComponent],
   imports: [
     CommonModule,
     TableModule,

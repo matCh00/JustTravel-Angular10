@@ -1,10 +1,11 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Trip} from "../../shared/models/trip.model";
 import {map, switchMap, take, tap} from "rxjs/operators";
 import {Observable} from "rxjs";
 import {NgForm} from "@angular/forms";
-import {ApiService} from "../../shared/services/api.service";
+import {Location} from "../../shared/models/location.model";
+import {TripService} from "../../shared/services/trip.service";
 
 @Component({
   selector: 'app-travel',
@@ -14,13 +15,15 @@ import {ApiService} from "../../shared/services/api.service";
 export class TravelComponent implements OnInit, AfterViewInit {
 
   trip$: Observable<Trip>;
+  locations: Location[] = [];
 
   editMode: boolean = false;
 
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private apiService: ApiService,
+    private tripService: TripService,
+    private router: Router,
   ) {}
 
 
@@ -31,7 +34,9 @@ export class TravelComponent implements OnInit, AfterViewInit {
     this.activatedRoute.queryParams.subscribe(queryParams => {
       this.editMode = queryParams['edit'] === 'true';
       if (!this.editMode) {
-        this.tripDetailsForm.form.disable();
+        setTimeout(() => {
+          this.tripDetailsForm.form.disable();
+        })
       }
     });
   }
@@ -49,9 +54,12 @@ export class TravelComponent implements OnInit, AfterViewInit {
             startDate: new Date(trip.startDate),
             endDate: new Date(trip.endDate),
           })
+
+          this.locations = trip.waypoints;
         })
       })
     )
+    this.trip$.subscribe();
   }
 
 
@@ -61,24 +69,14 @@ export class TravelComponent implements OnInit, AfterViewInit {
       switchMap((t: Trip) => {
         const trip: Trip = {
           ...this.tripDetailsForm.form.getRawValue(),
-          id: t.id
+          id: t.id,
+          waypoints: this.locations
         }
-        return this.apiService.editTrip(trip)
+        return this.tripService.editTrip(trip)
       })
-    ).subscribe();
-  }
-
-
-  handleLocationsChange(locations: Location[]) {
-    this.trip$.pipe(
-      take(1),
-      map(t => {
-        return {
-          ...t,
-          waypoints: locations
-        }
-      })
-    )
+    ).subscribe(() => {
+      this.router.navigate(['/travels']);
+    });
   }
 
 }

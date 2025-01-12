@@ -1,7 +1,7 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Observable} from "rxjs";
 import {Trip} from "../../../shared/models/trip.model";
-import {ApiService} from "../../../shared/services/api.service";
+import {TripService} from "../../../shared/services/trip.service";
 
 @Component({
   selector: 'app-trip-list',
@@ -10,16 +10,21 @@ import {ApiService} from "../../../shared/services/api.service";
 })
 export class TripListComponent implements OnInit {
 
-  trips$: Observable<Trip[]>;
-
-  @Output() delete = new EventEmitter<string>();
-
   constructor(
-    private apiService: ApiService,
+    private tripService: TripService,
   ) {}
 
+
+  trips$: Observable<Trip[]>;
+
+
   ngOnInit(): void {
-    this.trips$ = this.apiService.getTrips();
+    this.trips$ = this.tripService.trips;
+  }
+
+
+  deleteTrip(id: string) {
+    this.tripService.deleteTrip(id).subscribe()
   }
 
 }

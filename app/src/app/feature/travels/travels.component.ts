@@ -1,27 +1,27 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {ApiService} from "../../shared/services/api.service";
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Location} from "../../shared/models/location.model";
 import {Trip} from "../../shared/models/trip.model";
+import {TripService} from "../../shared/services/trip.service";
 
 @Component({
   selector: 'app-travels',
   templateUrl: './travels.component.html',
   styleUrls: ['./travels.component.scss']
 })
-export class TravelsComponent {
+export class TravelsComponent implements OnInit {
 
-  @Input() locations: Location[] = [];
-  @Output() locationsChange = new EventEmitter<Location[]>();
+  locations: Location[] = [];
 
   dialogVisible: boolean = false;
 
+
   constructor(
-    private apiService: ApiService,
+    private tripService: TripService,
   ) {}
 
 
-  createTrip() {
-    this.dialogVisible = true;
+  ngOnInit() {
+    this.tripService.fetchTrips();
   }
 
 
@@ -30,18 +30,18 @@ export class TravelsComponent {
       ...form,
       waypoints: this.locations
     }
-    this.apiService.addTrip(trip).subscribe(() => {
+    this.tripService.addTrip(trip).subscribe(() => {
       this.dialogVisible = false;
     });
   }
 
 
-  handleCancel() {
-    this.dialogVisible = false;
+  openDialog() {
+    this.dialogVisible = true;
   }
 
-  handleDelete(id: string) {
-    this.apiService.deleteTrip(id).subscribe()
+  closeDialog() {
+    this.dialogVisible = false;
   }
 
 }
