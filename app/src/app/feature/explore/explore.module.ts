@@ -5,6 +5,8 @@ import {PlacesCarouselComponent} from './places-carousel/places-carousel.compone
 import {DeferModule} from "primeng/defer";
 import {ExploreRoutingModule} from "./explore-routing.module";
 import {SharedModule} from "../../shared/shared.module";
+import {ProgressSpinnerModule} from "primeng/progressspinner";
+import {CarouselModule} from "primeng/carousel";
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import {SharedModule} from "../../shared/shared.module";
     CommonModule,
     DeferModule,
     ExploreRoutingModule,
-    SharedModule
+    SharedModule,
+    ProgressSpinnerModule,
+    CarouselModule
   ]
 })
 export class ExploreModule {

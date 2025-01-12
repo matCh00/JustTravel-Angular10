@@ -28,8 +28,10 @@
         <input [(ngModel)]="userAnswer" placeholder="Answer" pInputText style="flex-grow: 1" />
         <button pButton icon="pi pi-check" (click)="checkAnswer()"></button>
       </div>
-      <strong *ngIf="correct === false" style="color: red" class="p-my-3">Wrong</strong>
-      <strong *ngIf="correct === true" style="color: green" class="p-my-3">Right!</strong>
+      <div [ngSwitch]="correct">
+        <strong *ngSwitchCase="false" style="color: red" class="p-my-3">Wrong</strong>
+        <strong *ngSwitchCase="true" style="color: green" class="p-my-3">Right!</strong>
+      </div>
       <strong *ngIf="correct !== undefined" class="p-my-3">Count: {{count}}</strong>
       <button *ngIf="correct === true" pButton label="OK" (click)="ok()"></button>
     </div>

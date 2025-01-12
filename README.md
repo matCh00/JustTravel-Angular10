@@ -10,31 +10,46 @@ g { color: gold }
 
 ### Angular features
 
-* **project features**:
+* **features**:
+    * general:
+        * state: <x>BehaviorSubject</x> - <x>asObservable()</x> - <x>| async</x>
+        * async: <x> Observable | async </x>
+        * async detection: <x> Observable.subscribe() </x>
+        * destroy: <x> ngOnDestroy </x>
+        * defer: <x> pDefer </x>
+        * dialog: template <x> p-dialog </x>
+        * routing: <x> routing.module </x>
+        * resolver: <x> Resolve </x>
+        * route params: <x> activatedRoute.paramMap </x>
+        * form: <x> Template Driven </x>
+        * extract form: <x> viewProviders </x>: <x>ControlContainer + NgForm</x>
+        * ElementRef: <x> @ViewChild() </x>
+    * template flow:
+        * <x> *ngIf </x>, <x> *ngIf + ng-container </x>
+        * <x> *ngFor </x>
+        * <x> [ngSwitch] </x>
+    * component:
+        * <x> basic variable </x>
+        * <x> @Input() </x>
+        * <x> @Output() </x>
+        * two-way: <x> @Input() + @Output() </x>
+        * injectable: <x> constructor() </x>
     * animations:
-        * <x>class binding + @keyframes</x>
-    * related flow
-        * <x>@Input()</x>
-        * <x>@Output()</x>
-        * two-way: <x>@Input() + @Output()</x>
-    * component flow:
-        * <x>basic variables</x>
-        * <x>@ViewChild()</x>
-        * async: <x>Observable + async Pipe</x>
-        * destroy: <x>OnDestroy</x>
-    * injectable:
-        * <x>constructor()</x>
-    * html flow:
-        * <x>ng-container + *ngIf</x>
-        * <x>*ngFor</x>
-        * defer: <x>pDefer</x>
-    * dialog:
-        * template <x><p-dialog></x>
-    * forms:
-        * <x>template driven</x>
+        * class binding: <x> [class.animate] </x>
 
 
-* **other features**:
+* **PrimeNg components**:
+    * p-toolbar
+    * p-sidebar
+    * p-carousel
+    * p-progressSpinner
+    * p-table
+    * pButton
+    * p-calendar
+
+
+* **other**:
+    * <x>@angular/google-maps</x>
     * <x>dynamic scss variables</x> - _app.component.ts_
     * <x>theme</x> - _styles.scss_
     * <x>lazy loading</x> - _app-routing.module.ts_
@@ -51,7 +66,6 @@ g { color: gold }
 
 * **[feature](app/src/app/feature)** - _folder with feature modules_
     * [explore](app/src/app/feature/explore)
-        * map
         * places-carousel
         * _component, routing_
     * [home](app/src/app/feature/home)
@@ -70,6 +84,7 @@ g { color: gold }
 * **[shared](app/src/app/shared)** - _module with shared elements_
     * components
         * google-maps
+        * google-maps-game
         * nav-buttons
     * models
         * location.model
