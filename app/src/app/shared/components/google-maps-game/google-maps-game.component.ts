@@ -1,11 +1,11 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-map-explore',
-  templateUrl: './map.component.html',
-  styleUrls: ['./map.component.scss']
+  selector: 'app-google-maps-game',
+  templateUrl: './google-maps-game.component.html',
+  styleUrls: ['./google-maps-game.component.scss']
 })
-export class MapComponent {
+export class GoogleMapsGameComponent {
 
   center = {lat: 52.2297, lng: 21.0122};
   options: google.maps.MapOptions = {

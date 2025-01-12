@@ -1,33 +1,19 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ExploreComponent} from './explore.component';
-import {MapComponent} from './map/map.component';
 import {PlacesCarouselComponent} from './places-carousel/places-carousel.component';
-import {ProgressSpinnerModule} from "primeng/progressspinner";
-import {CarouselModule} from "primeng/carousel";
 import {DeferModule} from "primeng/defer";
 import {ExploreRoutingModule} from "./explore-routing.module";
-import {GoogleMapsModule} from "@angular/google-maps";
-import {ButtonModule} from "primeng/button";
-import {InputTextModule} from "primeng/inputtext";
-import {FormsModule} from "@angular/forms";
+import {SharedModule} from "../../shared/shared.module";
 
 
 @NgModule({
-  declarations: [ExploreComponent, MapComponent, PlacesCarouselComponent],
-  exports: [
-    MapComponent
-  ],
+  declarations: [ExploreComponent, PlacesCarouselComponent],
   imports: [
     CommonModule,
-    ProgressSpinnerModule,
-    CarouselModule,
     DeferModule,
     ExploreRoutingModule,
-    GoogleMapsModule,
-    ButtonModule,
-    InputTextModule,
-    FormsModule
+    SharedModule
   ]
 })
 export class ExploreModule {

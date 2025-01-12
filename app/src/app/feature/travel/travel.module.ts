@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {TravelComponent} from "./travel.component";
 import {TravelRoutingModule} from "./travel-routing.module";
 import {SharedModule} from "../../shared/shared.module";
-import { TripDetailsFormComponent } from './trip-details-form/trip-details-form.component';
+import {TripDetailsFormComponent} from './trip-details-form/trip-details-form.component';
 import {FormsModule} from "@angular/forms";
 import {ButtonModule} from "primeng/button";
 import {InputTextModule} from "primeng/inputtext";

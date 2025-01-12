@@ -7,13 +7,15 @@ import {ButtonModule} from "primeng/button";
 import {FormsModule} from "@angular/forms";
 import {NavButtonsComponent} from "./components/nav-buttons/nav-buttons.component";
 import {TooltipModule} from "primeng/tooltip";
+import {GoogleMapsGameComponent} from './components/google-maps-game/google-maps-game.component';
 
 
 @NgModule({
-  declarations: [GoogleMapsComponent, NavButtonsComponent],
+  declarations: [GoogleMapsComponent, NavButtonsComponent, GoogleMapsGameComponent],
   exports: [
     GoogleMapsComponent,
-    NavButtonsComponent
+    NavButtonsComponent,
+    GoogleMapsGameComponent
   ],
   imports: [
     GoogleMapsModule,
