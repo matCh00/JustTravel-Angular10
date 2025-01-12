@@ -9,10 +9,14 @@ export class NavButtonsComponent implements AfterViewInit {
 
   @Input() fragments: {frag: string, icon: string}[] = [];
 
+  @Input() position: 'topRight' | 'bottomCenter' = 'topRight';
+
 
   @ViewChild('navContainer') navContainer: ElementRef;
 
+
   constructor(private renderer: Renderer2) {}
+
 
   ngAfterViewInit(): void {
     const containerHeight = this.navContainer.nativeElement.offsetHeight;
