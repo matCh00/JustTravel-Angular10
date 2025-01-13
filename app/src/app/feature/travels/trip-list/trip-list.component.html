@@ -1,4 +1,7 @@
-<p-table [value]="trips$ | async">
+<p-table
+  [value]="trips$ | async"
+  [paginator]="true" [rows]="8"
+>
 
   <ng-template pTemplate="header">
     <tr>
