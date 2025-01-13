@@ -5,15 +5,17 @@ import {HeroComponent} from './hero/hero.component';
 import {InstructionComponent} from './instruction/instruction.component';
 import {HomeRoutingModule} from "./home-routing.module";
 import {SharedModule} from "../../shared/shared.module";
+import {ButtonModule} from "primeng/button";
 
 
 @NgModule({
   declarations: [HomeComponent, HeroComponent, InstructionComponent],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    SharedModule
-  ],
+    imports: [
+        CommonModule,
+        HomeRoutingModule,
+        SharedModule,
+        ButtonModule
+    ],
   exports: [
     HeroComponent, InstructionComponent
   ]
