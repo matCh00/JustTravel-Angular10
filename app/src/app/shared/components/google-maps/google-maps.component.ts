@@ -128,6 +128,7 @@ export class GoogleMapsComponent implements AfterViewInit, OnChanges {
       location: new google.maps.LatLng(location.lat, location.lng),
       stopover: true,
     }));
+    this.center = waypoints[0].location as unknown as {lat: number; lng: number;};
 
     const request: google.maps.DirectionsRequest = {
       origin: this.locations?.[0] ?? '',
